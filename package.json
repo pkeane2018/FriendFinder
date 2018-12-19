@@ -1,0 +1,15 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "This is application which allows users to find friends they are compatible with",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Patrick Keane",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
