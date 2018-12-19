@@ -1,0 +1,24 @@
+body {
+
+    background-image: url("./circles-light/circles-light.png")
+
+}
+
+#boo {
+
+    background-color: #F5FFFA;
+
+}
+
+#foo {
+
+    position: relative;
+    top: 15px;
+    
+}
+
+.questionbox {
+
+    width: 100%;
+
+}
