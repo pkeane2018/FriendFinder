@@ -54,9 +54,11 @@ var friendArray = [
 },
 ]
 
-console.log(friendArray);
-console.log(friendArray[0].name);
-console.log(friendArray[0].scores[0]);
-console.log(friendArray[0].scores[9]);
-console.log(friendArray[1].name);
-console.log(friendArray[2].name);
+// console.log(friendArray);
+// console.log(friendArray[0].name);
+// console.log(friendArray[0].scores[0]);
+// console.log(friendArray[0].scores[9]);
+// console.log(friendArray[1].name);
+// console.log(friendArray[2].name);
+
+module.exports = friendArray;
