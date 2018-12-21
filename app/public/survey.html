@@ -5,6 +5,7 @@
     <title>Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="style.css"> -->
 
 <style>
@@ -67,10 +68,10 @@
         <hr>
         <h3>About You</h3>
         <h5>Name (required)</h5>
-        <input type="text" name="name" class="questionbox">
+        <input type="text" name="name" class="questionbox" id = "name">
         <br><br>
         <h5>Link to Photo Image (required)</h5>
-        <input type="text" name="name" class="questionbox">
+        <input type="text" name="name" class="questionbox" id="photoURL">
         <br>
         <hr>
         <h3>Question 1</h3>
@@ -81,7 +82,7 @@
             Select an option
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
+            <a class="dropdown-item" value="1" id="inigo_montoyo" >1 (Strongly Disagree)</a>
             <a class="dropdown-item" value="2">2</a>
             <a class="dropdown-item" value="3">3</a>
             <a class="dropdown-item" value="4">4</a>
@@ -161,7 +162,7 @@
             Select an option
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
+            <a class="dropdown-item" value= 1>1 (Strongly Disagree)</a>
             <a class="dropdown-item" value="2">2</a>
             <a class="dropdown-item" value="3">3</a>
             <a class="dropdown-item" value="4">4</a>
@@ -193,11 +194,11 @@
             Select an option
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="2">2</a>
-            <a class="dropdown-item" value="3">3</a>
-            <a class="dropdown-item" value="4">4</a>
-            <a class="dropdown-item" value="5">5 (Strongly Agree)</a>
+            <a class="dropdown-item" option value="1">1 (Strongly Disagree)</a>
+            <a class="dropdown-item" option value="2">2</a>
+            <a class="dropdown-item" option value="3">3</a>
+            <a class="dropdown-item" option value="4">4</a>
+            <a class="dropdown-item" option value="5">5 (Strongly Agree)</a>
           </div>
         </div>
         <br>
@@ -209,7 +210,7 @@
             Select an option
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
+            <a class="dropdown-item" option value="1">1 (Strongly Disagree)</a>
             <a class="dropdown-item" value="2">2</a>
             <a class="dropdown-item" value="3">3</a>
             <a class="dropdown-item" value="4">4</a>
@@ -242,9 +243,64 @@
 
    </div>
 
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</body>
+
+<script>
+  
+  window.onload = function() {
+
+    var newFriend = []
+    // var answer = 0;
+    var scores = [];
+ 
+    // $(".questionbox").on("click", function(event){
+
+    //   event.preventDefault();
+
+    //   answer = this.val();
+
+    //   console.log("Your answer is: " + answer);
+
+    //   newFriend.push(answer);
+
+    //   console.log("Your info so far: " + newFriend);
+
+
+    // })
+
+    $(".dropdown-item").on("click", function() {
+ 
+    //  event.preventDefault();
+ 
+    // console.log($(this));
+
+    // console.log($("#inigo_montoyo").val());
+
+    //  var answer = ($(this).val());
+
+    //  console.log(($(this).val()) == "1");
+
+    //  console.log(answer);
+ 
+      var answer = $(this).attr('value');
+      
+      console.log(answer);
+
+      answer = parseInt(answer);
+
+      scores.push(answer);
+
+     console.log("Your scores so far: " + scores);
+
+    });
+
+  };
+    
+ 
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-</body>
 </html>
