@@ -1,8 +1,8 @@
 var allFriends = [5,2,3,3]; 
 
-var matches = [];
-
 function compareMatches () {
+
+    var matches = [];
 
         var x = 0;
         var y = 0;
