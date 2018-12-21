@@ -21,7 +21,7 @@ var friendArray = [
 {
     "name" : "Susan",
     "photo" : "../images/Susan.jpg",
-    "score" : [
+    "scores" : [
         1,
         3,
         5,
@@ -38,7 +38,7 @@ var friendArray = [
 {
     "name" : "Tom",
     "photo" : "../images/Tom.jpg",
-    "score" : [
+    "scores" : [
         4,
         3,
         3,

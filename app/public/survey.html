@@ -249,6 +249,8 @@
   
   window.onload = function() {
 
+console.log("Is this working?");
+
     // var newFriend = []
     // var answer = 0;
     var scores = [];
@@ -336,12 +338,6 @@
      yourPhoto = $("#photoURL").val(); 
      console.log(yourPhoto);
 
-    //  newFriend.push(yourName);
-    //  newFriend.push(yourPhoto);
-    //  newFriend.push(scores);
-
-    //  console.log(newFriend);
-
     var newFriend = {
 
       name : yourName,
@@ -358,7 +354,46 @@
 
      $.get("/api/friends", function(data) {
 
-      console.log(data[0]);
+      console.log(data);
+      
+      var allFriends = [];
+      var difference;
+      
+      for (a = 0; a < (data.length - 1); a++) {
+
+        var totalDifference = 0;
+
+        for (b = 0; b < 10; b++) {
+          
+          // console.log(data);
+          // console.log(newFriend);
+
+          var yourscore = newFriend.scores[b];
+          console.log(yourscore);
+          var friendscore = data[a].scores[b];
+          console.log(friendscore);
+
+          difference = (parseInt(yourscore) - parseInt(friendscore));
+
+          console.log("The difference is " + difference);
+
+          if (difference < 0) {
+
+            difference = (difference * (-1));
+
+          }
+          console.log("The difference is " + difference)
+          totalDifference += difference;
+          console.log("The total difference is " + totalDifference);
+          
+        }
+
+        allFriends.push(totalDifference);
+        console.log("TIME FOR NEW FRIEND");
+
+      }   
+
+      console.log(allFriends);   
 
      });
 
