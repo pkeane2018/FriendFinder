@@ -1,1 +1,5 @@
 # FriendFinder
+
+This application allows users to find potential friends they are compatible with. The user enters his or her name, a url to a picture of him or herself and answers ten questions. After completing these questions, the user clicks the submit button, which triggers a post request that sends the user's data to the friends api, as well as a get request that brings data on potential friends from the api. A modal popup then displays the name and picture of the potential friend who is the highest match with the user. This match is determined based on which potential friend in the friends api has the smallest difference in answers on the questions between themselves and the user. The code for this application could possibly be improved, such as with additional functionality that can handle cases where more than one potential friend has the same difference in scores between him or herself and the user.
+
+<a href = "https://desolate-garden-58915.herokuapp.com/">link to depoyed site</a> 

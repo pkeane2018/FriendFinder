@@ -52,6 +52,7 @@ var friendArray = [
     ]
 
 },
+
 ]
 
 // console.log(friendArray);
