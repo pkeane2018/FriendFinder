@@ -53,7 +53,11 @@ function compareMatches () {
         console.log("Your matches are in positions ");
         console.log(matches);
         
+        for (i = 0; i < matches.length; i++) {
 
+          console.log(data[matches[i]].name);
+            
+          }
 
       }
 

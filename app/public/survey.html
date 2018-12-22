@@ -57,8 +57,50 @@
 
     float: left;
 
+    }
+
+    img {
+
+      width: 70%;
+      height: 60%;
+
   }
 
+  .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 </style>
 
 </head>
@@ -77,11 +119,11 @@
         <h3>Question 1</h3>
         <h5>You enjoy trying new things.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" value="1" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
             <a class="dropdown-item" value="1">2</a>
             <a class="dropdown-item" value="1">3</a>
@@ -93,7 +135,7 @@
         <h3>Question 2</h3>
         <h5>You feel energized after spending time with people.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" value="2" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
@@ -109,7 +151,7 @@
         <h3>Question 3</h3>
         <h5>You like to keep things in your bedroom organized.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" value="3" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
@@ -125,7 +167,7 @@
         <h3>Question 4</h3>
         <h5>People can be really annoying.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="4" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
@@ -141,7 +183,7 @@
         <h3>Question 5</h3>
         <h5>You are usually on time for things.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="5" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
@@ -157,7 +199,7 @@
         <h3>Question 6</h3>
         <h5>You have strong views you are unlikely to change your mind on.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="6" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
@@ -173,7 +215,7 @@
         <h3>Question 7</h3>
         <h5>You find it easy to understand other people's thoughts and feelings.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="7" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
@@ -189,7 +231,7 @@
         <h3>Question 8</h3>
         <h5>You prefer to do outdoor activities instead of staying inside.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="8" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
@@ -205,7 +247,7 @@
         <h3>Question 9</h3>
         <h5>You are a night owl.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="9" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
@@ -221,7 +263,7 @@
         <h3>Question 10</h3>
         <h5>You tend to get lost in your own thoughts.</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="10" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Select an option
           </button>
@@ -242,6 +284,17 @@
         <p id="stuff"><a href=" https://github.com/pkeane2018/FriendFinder" target="_blank">&nbsp;Github Repo</p>
 
    </div>
+
+   <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1 id="modal-text">placeholder</h1>
+      <div id ="match-pic"></div>
+    </div>
+  
+  </div>
 
 </body>
 
@@ -269,10 +322,12 @@ console.log("Is this working?");
 
     //   console.log("Your info so far: " + newFriend);
 
-
     // })
 
     $(".dropdown-item").on("click", function() {
+
+      // $("#dropdownMenuButton1:first-child").text($(this).text());
+      // $("#dropdownMenuButton1:first-child").val($(this).text());
  
     //  event.preventDefault();
  
@@ -287,6 +342,8 @@ console.log("Is this working?");
     //  console.log(answer);
  
       var position = $(this).attr('value');
+
+      $("button[value =" + position + " ]").text($(this).text());
 
       console.log("The answer goes in position number " + position);
 
@@ -333,7 +390,15 @@ console.log("Is this working?");
 
     event.preventDefault();
 
-     yourName = $("#name").val();
+      if (( $("#name").val() === "") || ($("#photoURL").val() === "" )) {
+
+        alert("Please complete all required forms before submitting");
+
+      }
+
+      else {
+
+      yourName = $("#name").val();
      console.log(yourName);
      yourPhoto = $("#photoURL").val(); 
      console.log(yourPhoto);
@@ -370,21 +435,32 @@ console.log("Is this working?");
 
           var yourscore = newFriend.scores[b];
           console.log(yourscore);
+
           var friendscore = data[a].scores[b];
-          console.log(friendscore);
+            console.log(friendscore);
 
-          difference = (parseInt(yourscore) - parseInt(friendscore));
+            difference = (parseInt(yourscore) - parseInt(friendscore));
 
-          console.log("The difference is " + difference);
+            console.log("The difference is " + difference);
+          
+          if ((isNaN(difference)) == false) {
 
-          if (difference < 0) {
+            if (difference < 0) {
 
-            difference = (difference * (-1));
+              difference = (difference * (-1));
 
-          }
-          console.log("The difference is " + difference)
-          totalDifference += difference;
-          console.log("The total difference is " + totalDifference);
+            }
+            console.log("The difference is " + difference)
+            totalDifference += difference;
+            console.log("The total difference is " + totalDifference);
+
+        }
+
+        else {
+
+          console.log("ANSWER ALL THE QUESTIONS NEXT TIME!");
+
+        }
           
         }
 
@@ -416,16 +492,16 @@ console.log("Is this working?");
 
     }
 
-    else if (allFriends[i] ===  allFriends[x]) {
+    // else if (allFriends[i] ===  allFriends[x]) {
 
-        console.log(tie);
-        tie = true;
-        y = i;
-        matches.push(y);
-        console.log("Y is " + y);
-        console.log(tie);
+    //     console.log(tie);
+    //     tie = true;
+    //     y = i;
+    //     matches.push(y);
+    //     console.log("Y is " + y);
+    //     console.log(tie);
 
-    }
+    // }
 
     // else {
 
@@ -436,27 +512,38 @@ console.log("Is this working?");
 
   };
 
-  matches.push(x);
+      matches.push(x);
 
-  if (tie === false) {
+      console.log("The match position is " + x);
+      console.log("You match is " + data[x].name);
 
-    console.log("The match position is " + x);
-    console.log("You match is " + data[x].name);
+      var span = document.getElementsByClassName("close")[0];
 
-  }
+      var modal = document.getElementById("myModal");
 
-  else if (tie === true) {
+      var btn = document.getElementById("test");
 
-    console.log("You had more than one match");
-    console.log("Your matches are ");
-    console.log(matches);
-    for (i = 0; i < matches.length; i++) {
+      $("#modal-text").text("Your have been matched with " + data[x].name + ". Say hello to your new friend!");
+      var picURL = data[x].photo;
+      var pic = $("<img>");
+      pic.attr("src", picURL);
+      pic.attr("alt", "didn't work");
+      $("#match-pic").append(pic);
 
-      console.log(matches[i].name);
-      
-    }
+      modal.style.display = "block";
 
-  }
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+
+      };
 
   // console.log("The lowest number is in position " + x);
 
@@ -466,6 +553,9 @@ console.log("Is this working?");
 
      $("#name").val("");
      $("#photoURL").val("");
+
+
+      }
 
     });
 

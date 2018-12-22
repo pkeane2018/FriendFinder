@@ -2,7 +2,7 @@ var friendArray = [
 
 {
     "name" : "Bob",
-    "photo" : "../images/Bob.png",
+    "photo" : "http://www.pngmart.com/files/3/Man-PNG-Pic.png",
     "scores" : [
         2,
         4,
@@ -20,7 +20,7 @@ var friendArray = [
 
 {
     "name" : "Susan",
-    "photo" : "../images/Susan.jpg",
+    "photo" : "https://www.stillmanbank.com/wp-content/uploads/2015/12/Young-woman-smile.jpg",
     "scores" : [
         1,
         3,
@@ -37,7 +37,7 @@ var friendArray = [
 
 {
     "name" : "Tom",
-    "photo" : "../images/Tom.jpg",
+    "photo" : "https://3qtu1m3ypm5t4vj8530cfjbq-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/foto-SORRISO-LINEAR.jpg",
     "scores" : [
         4,
         3,
