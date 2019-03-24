@@ -1,4 +1,4 @@
-# FriendFinder
+# Friend Finder
 
 This application allows users to find potential friends they are compatible with. 
 
