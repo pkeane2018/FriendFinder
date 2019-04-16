@@ -13,6 +13,12 @@ Also in the 'app' folder is the 'routing' subfolder which contains 'apiRoutes.js
 ## How to use site
 The user enters his or her name, a url to a picture of him or herself and answers ten questions. After completing these questions, the user clicks the submit button, which triggers a post request that sends the user's data to the friends api, as well as a get request that brings data on potential friends from the api. A modal popup then displays the name and picture of the potential friend who is the highest match with the user. This match is determined based on which potential friend in the friends api has the smallest difference in answers on the questions between themselves and the user.
 
+![FF Image 1](./images/image-1.png)
+<br><br>
+![FF Image-2](./images/image-2.png)
+<br><br>
+![FF Image-3](./images/image-3.png)
+
 ## Technology used
 
 * HTML 
