@@ -12,11 +12,13 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(req, res){
 
+    friendData.push(req.body);
+    var newFriend = req.body;
     var allFriends = [];
     var difference;
+    var topMatch;
     
-    
-      for (a = 0; a < (data.length - 1); a++) {
+      for (a = 0; a < (friendData.length - 1); a++) {
 
         var totalDifference = 0;
 
@@ -28,7 +30,7 @@ module.exports = function(app) {
           var yourscore = newFriend.scores[b];
           console.log(yourscore);
 
-          var friendscore = data[a].scores[b];
+          var friendscore = friendData[a].scores[b];
             console.log(friendscore);
 
             difference = (parseInt(yourscore) - parseInt(friendscore));
@@ -63,7 +65,12 @@ module.exports = function(app) {
 
       console.log(allFriends);   
 
-      compareMatches();
+function sendBackData(x) {
+
+    console.log("The Match number is " + x);
+    res.status().send(topMatch)
+
+;}
 
     function compareMatches () {
 
@@ -73,7 +80,7 @@ module.exports = function(app) {
     // var y = 0;
     // var tie = false;
 
-    for (i = 1; i < allFriends.length; i++) {
+    for (i = 1; i <= allFriends.length; i++) {
 
     // if ((allFriends[i] < allFriends[i - 1]) && (allFriends[i] <  allFriends[x])) 
     
@@ -84,6 +91,7 @@ module.exports = function(app) {
 
     };
 
+    topMatch = friendData[x];
     // else if (allFriends[i] ===  allFriends[x]) {
 
     //     console.log(tie);
@@ -102,11 +110,13 @@ module.exports = function(app) {
 
     // }
 
-  };
+    };
 
-};
-       friendData.push(req.body);
-       res = x;
+    sendBackData(x);
+
+    }     
+    
+    compareMatches();
 }
 
 )};

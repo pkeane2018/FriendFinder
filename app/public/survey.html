@@ -307,7 +307,6 @@ console.log("Is this working?");
     var scores = [];
     var yourName;
     var yourPhoto;
-    var matchNum;
  
     // $(".questionbox").on("click", function(event){
 
@@ -389,6 +388,8 @@ console.log("Is this working?");
 
     event.preventDefault();
 
+    var matchNum;
+
       if (( $("#name").val() === "") || ($("#photoURL").val() === "" )) {
 
         alert("Please complete all required forms before submitting");
@@ -410,7 +411,7 @@ console.log("Is this working?");
 
      };
 
-     $.post("/api/friends", newFriend, function(data) { 
+     $.post("/api/friends", newFriend, function(data, response) { 
 
       console.log("The data we're sending to the friends API is " + data);
 
@@ -418,12 +419,14 @@ console.log("Is this working?");
 
       // matchNum = response;
 
+      console.log(response);
+
      }).then($.get("/api/friends", function (data) {
 
       //  matches.push(x);
 
-       console.log("The match position is " + matchNum);
-       console.log("You match is " + data[matchNum].name);
+      //  console.log("The match position is " + matchNum);
+      //  console.log("You match is " + data[matchNum].name);
 
        var span = document.getElementsByClassName("close")[0];
 
@@ -567,7 +570,6 @@ console.log("Is this working?");
 
      $("#name").val("");
      $("#photoURL").val("");
-
 
       }
 
