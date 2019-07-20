@@ -307,6 +307,7 @@ console.log("Is this working?");
     var scores = [];
     var yourName;
     var yourPhoto;
+    var matchNum;
  
     // $(".questionbox").on("click", function(event){
 
@@ -396,7 +397,7 @@ console.log("Is this working?");
 
       else {
 
-      yourName = $("#name").val();
+    yourName = $("#name").val();
      console.log(yourName);
      yourPhoto = $("#photoURL").val(); 
      console.log(yourPhoto);
@@ -407,147 +408,162 @@ console.log("Is this working?");
       photo: yourPhoto,
       scores: scores,
 
-    };
+     };
 
      $.post("/api/friends", newFriend, function(data) { 
 
       console.log("The data we're sending to the friends API is " + data);
 
-     });
+      // console.log("The match number we got back is " + response);
 
-     $.get("/api/friends", function(data) {
+      // matchNum = response;
 
-      console.log(data);
+     }).then($.get("/api/friends", function (data) {
+
+      //  matches.push(x);
+
+       console.log("The match position is " + matchNum);
+       console.log("You match is " + data[matchNum].name);
+
+       var span = document.getElementsByClassName("close")[0];
+
+       var modal = document.getElementById("myModal");
+
+       var btn = document.getElementById("test");
+
+       $("#modal-text").text("Your have been matched with " + data[matchNum].name + ". Say hello to your new friend!");
+       var picURL = data[matchNum].photo;
+       var pic = $("<img>");
+       pic.attr("src", picURL);
+       pic.attr("alt", "didn't work");
+       $("#match-pic").append(pic);
+
+       modal.style.display = "block";
+
+       // When the user clicks on <span> (x), close the modal
+       span.onclick = function () {
+         modal.style.display = "none";
+
+       };
+
+       window.onclick = function (event) {
+         if (event.target == modal) {
+           modal.style.display = "none";
+         }
+
+       };
+
+      }));
+
+
+    //  }));
+
+  //    $.get("/api/friends", function(data) {
+
+  //     console.log(data);
       
-      var allFriends = [];
-      var difference;
+  //     var allFriends = [];
+  //     var difference;
       
-      for (a = 0; a < (data.length - 1); a++) {
+  //     for (a = 0; a < (data.length - 1); a++) {
 
-        var totalDifference = 0;
+  //       var totalDifference = 0;
 
-        for (b = 0; b < 10; b++) {
+  //       for (b = 0; b < 10; b++) {
+
+  //         var yourscore = newFriend.scores[b];
+  //         console.log(yourscore);
+
+  //         var friendscore = data[a].scores[b];
+  //           console.log(friendscore);
+
+  //           difference = (parseInt(yourscore) - parseInt(friendscore));
+
+  //           console.log("The difference is " + difference);
           
-          // console.log(data);
-          // console.log(newFriend);
+  //         if ((isNaN(difference)) == false) {
 
-          var yourscore = newFriend.scores[b];
-          console.log(yourscore);
+  //           if (difference < 0) {
 
-          var friendscore = data[a].scores[b];
-            console.log(friendscore);
+  //             difference = (difference * (-1));
 
-            difference = (parseInt(yourscore) - parseInt(friendscore));
+  //           }
+  //           console.log("The difference is " + difference)
+  //           totalDifference += difference;
+  //           console.log("The total difference is " + totalDifference);
 
-            console.log("The difference is " + difference);
+  //       }
+
+  //       else {
+
+  //         console.log("ANSWER ALL THE QUESTIONS NEXT TIME!");
+
+  //       }
           
-          if ((isNaN(difference)) == false) {
+  //       }
 
-            if (difference < 0) {
+  //       allFriends.push(totalDifference);
+  //       console.log("TIME FOR NEW FRIEND");
 
-              difference = (difference * (-1));
+  //     }   
 
-            }
-            console.log("The difference is " + difference)
-            totalDifference += difference;
-            console.log("The total difference is " + totalDifference);
+  //     console.log(allFriends);   
 
-        }
+  //     compareMatches();
 
-        else {
+  //   function compareMatches () {
 
-          console.log("ANSWER ALL THE QUESTIONS NEXT TIME!");
+  //   var matches = [];
 
-        }
-          
-        }
+  //   var x = 0;
+  //   var y = 0;
+  //   var tie = false;
 
-        allFriends.push(totalDifference);
-        console.log("TIME FOR NEW FRIEND");
-
-      }   
-
-      console.log(allFriends);   
-
-      compareMatches();
-
-    function compareMatches () {
-
-    var matches = [];
-
-    var x = 0;
-    var y = 0;
-    var tie = false;
-
-    for (i = 1; i < allFriends.length; i++) {
-
-    // if ((allFriends[i] < allFriends[i - 1]) && (allFriends[i] <  allFriends[x])) 
+  //   for (i = 1; i < allFriends.length; i++) {
     
-    if (allFriends[i] <  allFriends[x]) {
+  //   if (allFriends[i] <  allFriends[x]) {
     
-      x = i;
-      console.log("X is " + x);
+  //     x = i;
+  //     console.log("X is " + x);
 
-    }
+  //   }
 
-    // else if (allFriends[i] ===  allFriends[x]) {
+  // };
 
-    //     console.log(tie);
-    //     tie = true;
-    //     y = i;
-    //     matches.push(y);
-    //     console.log("Y is " + y);
-    //     console.log(tie);
+  //     matches.push(x);
 
-    // }
+  //     console.log("The match position is " + x);
+  //     console.log("You match is " + data[x].name);
 
-    // else {
+  //     var span = document.getElementsByClassName("close")[0];
 
-    //   x = i - 1;
-    //   console.log(x);
+  //     var modal = document.getElementById("myModal");
 
-    // }
+  //     var btn = document.getElementById("test");
 
-  };
+  //     $("#modal-text").text("Your have been matched with " + data[x].name + ". Say hello to your new friend!");
+  //     var picURL = data[x].photo;
+  //     var pic = $("<img>");
+  //     pic.attr("src", picURL);
+  //     pic.attr("alt", "didn't work");
+  //     $("#match-pic").append(pic);
 
-      matches.push(x);
+  //     modal.style.display = "block";
 
-      console.log("The match position is " + x);
-      console.log("You match is " + data[x].name);
+  //     // When the user clicks on <span> (x), close the modal
+  //     span.onclick = function () {
+  //       modal.style.display = "none";
 
-      var span = document.getElementsByClassName("close")[0];
+  //     };
 
-      var modal = document.getElementById("myModal");
+  //     window.onclick = function (event) {
+  //       if (event.target == modal) {
+  //         modal.style.display = "none";
+  //       }
 
-      var btn = document.getElementById("test");
-
-      $("#modal-text").text("Your have been matched with " + data[x].name + ". Say hello to your new friend!");
-      var picURL = data[x].photo;
-      var pic = $("<img>");
-      pic.attr("src", picURL);
-      pic.attr("alt", "didn't work");
-      $("#match-pic").append(pic);
-
-      modal.style.display = "block";
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function () {
-        modal.style.display = "none";
-
-      };
-
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-
-      };
+  //     };
 
   // console.log("The lowest number is in position " + x);
-
-  };
-
-     });
 
      $("#name").val("");
      $("#photoURL").val("");
