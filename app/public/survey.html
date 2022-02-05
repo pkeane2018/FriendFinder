@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <title>Survey</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="style.css"> -->
+  <meta charset="utf-8" />
+  <title>Survey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="style.css"> -->
 
-<style>
+  <style>
+    body {
 
-  body {
+      background-image: url("./circles-light/circles-light.png")
+    }
 
-    background-image: url("./circles-light/circles-light.png")
-  }
+    #boo {
 
-  #boo {
+      background-color: #F5FFFA;
+      height: 110%
+    }
 
-    background-color: #F5FFFA;
-    height: 110%
-  }
+    #foo {
 
-  #foo {
+      position: relative;
+      top: 15px;
 
-    position: relative;
-    top: 15px;
+    }
 
-  }
+    .questionbox {
 
-  .questionbox {
+      width: 100%;
 
-    width: 100%;
+    }
 
-  }
+    #submit {
 
-  #submit {
+      width: 100%;
 
-    width: 100%;
+    }
 
-  }
+    .links {
 
-  .links {
+      float: left;
+      position: relative;
+      left: 12%;
 
-    float: left;
-    position: relative;
-    left: 12%;
+    }
 
-  }
+    #firstpage {
 
-  #firstpage {
+      background-color: #F5FFFA;
+    }
 
-    background-color: #F5FFFA;
-  }
+    #survey-links {
 
-  #survey-links {
-
-    float: left;
+      float: left;
 
     }
 
@@ -64,301 +65,263 @@
       width: 40%;
       height: 30%;
 
-  }
+    }
 
-  .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
-}
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; 
-}
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
 
 </head>
+
 <body>
-    <div class = "container" id= "boo">
-        <h2 id= "foo">Survey Questions</h2>
-        <hr>
-        <h3>About You</h3>
-        <h5>Name (required)</h5>
-        <input type="text" name="name" class="questionbox" id = "name">
-        <br><br>
-        <h5>Link to Photo Image (required)</h5>
-        <input type="text" name="name" class="questionbox" id="photoURL">
-        <br>
-        <hr>
-        <h3>Question 1</h3>
-        <h5>You enjoy trying new things.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" value="1" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="1">2</a>
-            <a class="dropdown-item" value="1">3</a>
-            <a class="dropdown-item" value="1">4</a>
-            <a class="dropdown-item" value="1">5 (Strongly Agree)</a>
-          </div>
-        </div>
-        <br>
-        <h3>Question 2</h3>
-        <h5>You feel energized after spending time with people.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" value="2" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="2">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="2">2</a>
-            <a class="dropdown-item" value="2">3</a>
-            <a class="dropdown-item" value="2">4</a>
-            <a class="dropdown-item" value="2">5 (Strongly Agree)</a>
-          </div>
-          </div>
-        <br>
-        <h3>Question 3</h3>
-        <h5>You like to keep things in your bedroom organized.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" value="3" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="3">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="3">2</a>
-            <a class="dropdown-item" value="3">3</a>
-            <a class="dropdown-item" value="3">4</a>
-            <a class="dropdown-item" value="3">5 (Strongly Agree)</a>
-          </div>
-        </div>
-        <br>
-        <h3>Question 4</h3>
-        <h5>People can be really annoying.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="4" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="4">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="4">2</a>
-            <a class="dropdown-item" value="4">3</a>
-            <a class="dropdown-item" value="4">4</a>
-            <a class="dropdown-item" value="4">5 (Strongly Agree)</a>
-          </div>
-        </div>
-        <br>
-        <h3>Question 5</h3>
-        <h5>You are usually on time for things.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="5" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="5">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="5">2</a>
-            <a class="dropdown-item" value="5">3</a>
-            <a class="dropdown-item" value="5">4</a>
-            <a class="dropdown-item" value="5">5 (Strongly Agree)</a>
-          </div>
-        </div>
-        <br>
-        <h3>Question 6</h3>
-        <h5>You have strong views you are unlikely to change your mind on.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="6" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="6">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="6">2</a>
-            <a class="dropdown-item" value="6">3</a>
-            <a class="dropdown-item" value="6">4</a>
-            <a class="dropdown-item" value="6">5 (Strongly Agree)</a>
-          </div>
-        </div>
-        <br>
-        <h3>Question 7</h3>
-        <h5>You find it easy to understand other people's thoughts and feelings.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="7" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="7">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="7">2</a>
-            <a class="dropdown-item" value="7">3</a>
-            <a class="dropdown-item" value="7">4</a>
-            <a class="dropdown-item" value="7">5 (Strongly Agree)</a>
-          </div>
-        </div>
-        <br>
-        <h3>Question 8</h3>
-        <h5>You prefer to do outdoor activities instead of staying inside.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="8" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="8">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="8">2</a>
-            <a class="dropdown-item" value="8">3</a>
-            <a class="dropdown-item" value="8">4</a>
-            <a class="dropdown-item" value="8">5 (Strongly Agree)</a>
-          </div>
-        </div>
-        <br>
-        <h3>Question 9</h3>
-        <h5>You are a night owl.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="9" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="9">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="9">2</a>
-            <a class="dropdown-item" value="9">3</a>
-            <a class="dropdown-item" value="9">4</a>
-            <a class="dropdown-item" value="9">5 (Strongly Agree)</a>
-          </div>
-        </div>
-        <br>
-        <h3>Question 10</h3>
-        <h5>You tend to get lost in your own thoughts.</h5>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="10" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Select an option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" value="10">1 (Strongly Disagree)</a>
-            <a class="dropdown-item" value="10">2</a>
-            <a class="dropdown-item" value="10">3</a>
-            <a class="dropdown-item" value="10">4</a>
-            <a class="dropdown-item" value="10">5 (Strongly Agree)</a>
-          </div>
-        </div>
-        <br>
-        <input class="btn btn-primary btn-lg" type="submit" value="Submit" id="submit">
-        <br>
-        <hr>
-        <br>
+  <div class="container" id="boo">
+    <h2 id="foo">Survey Questions</h2>
+    <hr>
+    <h3>About You</h3>
+    <h5>Name (required)</h5>
+    <input type="text" name="name" class="questionbox" id="name">
+    <br><br>
+    <h5>Link to Photo Image (required)</h5>
+    <input type="text" name="name" class="questionbox" id="photoURL">
+    <br>
+    <hr>
+    <h3>Question 1</h3>
+    <h5>You enjoy trying new things.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" value="1"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="1">2</a>
+        <a class="dropdown-item" value="1">3</a>
+        <a class="dropdown-item" value="1">4</a>
+        <a class="dropdown-item" value="1">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <h3>Question 2</h3>
+    <h5>You feel energized after spending time with people.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" value="2"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" value="2">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="2">2</a>
+        <a class="dropdown-item" value="2">3</a>
+        <a class="dropdown-item" value="2">4</a>
+        <a class="dropdown-item" value="2">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <h3>Question 3</h3>
+    <h5>You like to keep things in your bedroom organized.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" value="3"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" value="3">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="3">2</a>
+        <a class="dropdown-item" value="3">3</a>
+        <a class="dropdown-item" value="3">4</a>
+        <a class="dropdown-item" value="3">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <h3>Question 4</h3>
+    <h5>People can be really annoying.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="4"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" value="4">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="4">2</a>
+        <a class="dropdown-item" value="4">3</a>
+        <a class="dropdown-item" value="4">4</a>
+        <a class="dropdown-item" value="4">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <h3>Question 5</h3>
+    <h5>You are usually on time for things.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="5"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" value="5">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="5">2</a>
+        <a class="dropdown-item" value="5">3</a>
+        <a class="dropdown-item" value="5">4</a>
+        <a class="dropdown-item" value="5">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <h3>Question 6</h3>
+    <h5>You have strong views you are unlikely to change your mind on.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="6"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" value="6">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="6">2</a>
+        <a class="dropdown-item" value="6">3</a>
+        <a class="dropdown-item" value="6">4</a>
+        <a class="dropdown-item" value="6">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <h3>Question 7</h3>
+    <h5>You find it easy to understand other people's thoughts and feelings.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="7"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" value="7">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="7">2</a>
+        <a class="dropdown-item" value="7">3</a>
+        <a class="dropdown-item" value="7">4</a>
+        <a class="dropdown-item" value="7">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <h3>Question 8</h3>
+    <h5>You prefer to do outdoor activities instead of staying inside.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="8"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" value="8">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="8">2</a>
+        <a class="dropdown-item" value="8">3</a>
+        <a class="dropdown-item" value="8">4</a>
+        <a class="dropdown-item" value="8">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <h3>Question 9</h3>
+    <h5>You are a night owl.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="9"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" value="9">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="9">2</a>
+        <a class="dropdown-item" value="9">3</a>
+        <a class="dropdown-item" value="9">4</a>
+        <a class="dropdown-item" value="9">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <h3>Question 10</h3>
+    <h5>You tend to get lost in your own thoughts.</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" value="10"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select an option
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" value="10">1 (Strongly Disagree)</a>
+        <a class="dropdown-item" value="10">2</a>
+        <a class="dropdown-item" value="10">3</a>
+        <a class="dropdown-item" value="10">4</a>
+        <a class="dropdown-item" value="10">5 (Strongly Agree)</a>
+      </div>
+    </div>
+    <br>
+    <input class="btn btn-primary btn-lg" type="submit" value="Submit" id="submit">
+    <br>
+    <hr>
+    <br>
 
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <h1 id="modal-text">placeholder</h1>
-            <div id ="match-pic"></div>
-          </div>
-        </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 id="modal-text">placeholder</h1>
+        <div id="match-pic"></div>
+      </div>
+    </div>
 
 
-        <p id="survey-links"><a href="/api/friends">API Friends List |  </a></p>
-        <p id="survey-links"><a href=" https://github.com/pkeane2018/FriendFinder" target="_blank">&nbsp;Github Repo</p>
+    <p id="survey-links"><a href="/api/friends">API Friends List | </a></p>
+    <p id="survey-links"><a href=" https://github.com/pkeane2018/FriendFinder" target="_blank">&nbsp;Github Repo</p>
 
-   </div>
+  </div>
 
 </body>
 
 <script>
-  
-  window.onload = function() {
 
-console.log("Is this working?");
+  window.onload = function () {
 
-    // var newFriend = []
-    // var answer = 0;
     var scores = [];
     var yourName;
     var yourPhoto;
- 
-    // $(".questionbox").on("click", function(event){
 
-    //   event.preventDefault();
+    $(".dropdown-item").on("click", function () {
 
-    //   answer = this.val();
-
-    //   console.log("Your answer is: " + answer);
-
-    //   newFriend.push(answer);
-
-    //   console.log("Your info so far: " + newFriend);
-
-    // })
-
-    $(".dropdown-item").on("click", function() {
-
-      // $("#dropdownMenuButton1:first-child").text($(this).text());
-      // $("#dropdownMenuButton1:first-child").val($(this).text());
- 
-    //  event.preventDefault();
- 
-    // console.log($(this));
-
-    // console.log($("#inigo_montoyo").val());
-
-    //  var answer = ($(this).val());
-
-    //  console.log(($(this).val()) == "1");
-
-    //  console.log(answer);
- 
       var position = $(this).attr('value');
 
       $("button[value =" + position + " ]").text($(this).text());
 
-      console.log("The answer goes in position number " + position);
-
       position = (parseInt(position)) - 1;
 
-      console.log("The answer goes in position number " + position);
-
       var answer = $(this).text()
-
-      console.log("Your answer is " + answer);
 
       if (answer === "1 (Strongly Disagree") {
 
         answer = "1";
 
       }
-      
+
       else if (answer === "5 (Strongly Agree") {
 
         answer = "5";
@@ -367,28 +330,15 @@ console.log("Is this working?");
 
       answer = parseInt(answer);
 
-      console.log("Your answer is " + answer)
-      
       scores[position] = answer;
-
-      console.log(scores);
-
-      // var position = $(this).attr('id');
-      // console.log("The answer goes in position number " + position);
-      // position = (parseInt(position)) - 1;
-      // console.log("The answer goes in position number " + position);
-
-    //   scores.push(answer);
-
-    //  console.log("Your scores so far: " + scores);
 
     });
 
-    $("#submit").on("click", function() { 
+    $("#submit").on("click", function () {
 
-    event.preventDefault();
+      event.preventDefault();
 
-      if (( $("#name").val() === "") || ($("#photoURL").val() === "" )) {
+      if (($("#name").val() === "") || ($("#photoURL").val() === "")) {
 
         alert("Please complete all required forms before submitting");
 
@@ -396,161 +346,113 @@ console.log("Is this working?");
 
       else {
 
-      yourName = $("#name").val();
-     console.log(yourName);
-     yourPhoto = $("#photoURL").val(); 
-     console.log(yourPhoto);
+        yourName = $("#name").val();
+        yourPhoto = $("#photoURL").val();
+        yourPhoto = $("#photoURL").val();
+        yourPhoto = $("#photoURL").val();
+        yourPhoto = $("#photoURL").val();
+        yourPhoto = $("#photoURL").val();
 
-    var newFriend = {
+        var newFriend = {
 
-      name : yourName,
-      photo: yourPhoto,
-      scores: scores,
+          name: yourName,
+          photo: yourPhoto,
+          scores: scores,
 
-    };
+        };
 
-     $.post("/api/friends", newFriend, function(data) { 
+        $.post("/api/friends", newFriend, function (data) {
 
-      console.log("The data we're sending to the friends API is " + data);
+          console.log("The data we're sending to the friends API is " + data);
 
-     });
+        });
 
-     $.get("/api/friends", function(data) {
+        $.get("/api/friends", function (data) {
 
-      console.log(data);
-      
-      var allFriends = [];
-      var difference;
-      
-      for (a = 0; a < (data.length - 1); a++) {
+          var allFriends = [];
+          var difference;
 
-        var totalDifference = 0;
+          for (a = 0; a < (data.length - 1); a++) {
 
-        for (b = 0; b < 10; b++) {
-          
-          // console.log(data);
-          // console.log(newFriend);
+            var totalDifference = 0;
 
-          var yourscore = newFriend.scores[b];
-          console.log(yourscore);
+            for (b = 0; b < 10; b++) {
 
-          var friendscore = data[a].scores[b];
-            console.log(friendscore);
+              var yourscore = newFriend.scores[b];
 
-            difference = (parseInt(yourscore) - parseInt(friendscore));
+              var friendscore = data[a].scores[b];
 
-            console.log("The difference is " + difference);
-          
-          if ((isNaN(difference)) == false) {
+              difference = (parseInt(yourscore) - parseInt(friendscore));
 
-            if (difference < 0) {
+              if ((isNaN(difference)) == false) {
 
-              difference = (difference * (-1));
+                if (difference < 0) {
 
+                  difference = (difference * (-1));
+
+                }
+                totalDifference += difference;
+              }
             }
-            console.log("The difference is " + difference)
-            totalDifference += difference;
-            console.log("The total difference is " + totalDifference);
 
-        }
+            allFriends.push(totalDifference);
 
-        else {
+          }
 
-          console.log("ANSWER ALL THE QUESTIONS NEXT TIME!");
+          compareMatches();
 
-        }
-          
-        }
+          function compareMatches() {
 
-        allFriends.push(totalDifference);
-        console.log("TIME FOR NEW FRIEND");
+            var matches = [];
 
-      }   
+            var x = 0;
+            var y = 0;
+            var tie = false;
 
-      console.log(allFriends);   
+            for (i = 1; i < allFriends.length; i++) {
 
-      compareMatches();
+              if (allFriends[i] < allFriends[x]) {
+                x = i;
+              }
 
-    function compareMatches () {
+            };
 
-    var matches = [];
+            matches.push(x);
 
-    var x = 0;
-    var y = 0;
-    var tie = false;
+            var span = document.getElementsByClassName("close")[0];
 
-    for (i = 1; i < allFriends.length; i++) {
+            var modal = document.getElementById("myModal");
 
-    // if ((allFriends[i] < allFriends[i - 1]) && (allFriends[i] <  allFriends[x])) 
-    
-    if (allFriends[i] <  allFriends[x]) {
-    
-      x = i;
-      console.log("X is " + x);
+            var btn = document.getElementById("test");
 
-    }
+            $("#modal-text").text("Your have been matched with " + data[x].name + ". Say hello to your new friend!");
+            var picURL = data[x].photo;
+            var pic = $("<img>");
+            pic.attr("src", picURL);
+            pic.attr("alt", "didn't work");
+            $("#match-pic").append(pic);
 
-    // else if (allFriends[i] ===  allFriends[x]) {
+            modal.style.display = "block";
 
-    //     console.log(tie);
-    //     tie = true;
-    //     y = i;
-    //     matches.push(y);
-    //     console.log("Y is " + y);
-    //     console.log(tie);
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+              modal.style.display = "none";
 
-    // }
+            };
 
-    // else {
+            window.onclick = function (event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
 
-    //   x = i - 1;
-    //   console.log(x);
+            };
 
-    // }
+          };
 
-  };
+        });
 
-      matches.push(x);
-
-      console.log("The match position is " + x);
-      console.log("You match is " + data[x].name);
-
-      var span = document.getElementsByClassName("close")[0];
-
-      var modal = document.getElementById("myModal");
-
-      var btn = document.getElementById("test");
-
-      $("#modal-text").text("Your have been matched with " + data[x].name + ". Say hello to your new friend!");
-      var picURL = data[x].photo;
-      var pic = $("<img>");
-      pic.attr("src", picURL);
-      pic.attr("alt", "didn't work");
-      $("#match-pic").append(pic);
-
-      modal.style.display = "block";
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function () {
-        modal.style.display = "none";
-
-      };
-
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-
-      };
-
-  // console.log("The lowest number is in position " + x);
-
-  };
-
-     });
-
-     $("#name").val("");
-     $("#photoURL").val("");
+        $("#name").val("");
+        $("#photoURL").val("");
 
 
       }
@@ -559,10 +461,12 @@ console.log("Is this working?");
 
   };
 
-  </script>
+</script>
 
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>
