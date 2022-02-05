@@ -37,7 +37,7 @@ var friendArray = [
 
 {
     "name" : "Tom",
-    "photo" : "https://3qtu1m3ypm5t4vj8530cfjbq-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/foto-SORRISO-LINEAR.jpg",
+    "photo" : "https://img.freepik.com/free-photo/close-up-confident-male-employee-white-collar-shirt-smiling-camera-standing-self-assured-against-studio-background_1258-26761.jpg?size=626&ext=jpg&ga=GA1.1.1988814956.1641859200https://3qtu1m3ypm5t4vj8530cfjbq-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/foto-SORRISO-LINEAR.jpg",
     "scores" : [
         4,
         3,
